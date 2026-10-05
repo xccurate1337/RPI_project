@@ -1,0 +1,115 @@
+.enrollment-timer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+  background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  height: 100%;
+}
+
+.timer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3a8a;
+  width: fit-content;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: timerPulse 1.5s infinite;
+}
+
+@keyframes timerPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.timer-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.timer-subtext {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.timer-digits-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.digit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 86px;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.12);
+  border: 1px solid #bfdbfe;
+}
+
+.digit-value {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1d4ed8;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+  line-height: 1;
+}
+
+.digit-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.digit-separator {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 18px;
+}
+
+.timer-footer-note {
+  font-size: 13px;
+  color: #1e40af;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: fit-content;
+}
