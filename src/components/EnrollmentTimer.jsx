@@ -122,9 +122,6 @@ export const EnrollmentTimer = ({ initialMinutes = 15, onExpire }) => {
 
       <div className="timer-footer-note">
         <span>⚡ Мест в группе: <strong>{isExpired ? 0 : 3} из 12</strong></span>
-        <span className="timer-leak-badge">
-          🛡️ {isRunning ? 'Работает без утечек' : 'Остановлен при уходе'}
-        </span>
       </div>
     </div>
   );
