@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* Контейнеры */
+.app-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Навигация / Хедер */
+.header-container {
+  margin-bottom: 30px;
+}
+
+.nav-bar {
+  display: flex;
+  /* Градиент из 3 цветов со скриншота: верхний левый, средний, нижний правый */
+  background: linear-gradient(135deg, #9DB1D2 0%, #8CB6FB 50%, #ADACAA 100%);
+  border-radius: 12px;
+  padding: 6px;
+  gap: 8px;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.active {
+  background-color: #ffffff;
+  color: #2b3a4a;
+}
+
+/* Карточки и сеточные блоки */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Ссылки-стрелки у партнеров */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a1a;
+  transition: transform 0.2s ease;
+}
+
+.arrow-link:hover {
+  transform: translate(3px, -3px);
+}
