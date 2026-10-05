@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { EnrollmentTimer } from '../components/EnrollmentTimer';
+import { ApplicationForm } from '../components/ApplicationForm';
 
 export const HomePage = ({ setActiveTab }) => {
+  const [isExpired, setIsExpired] = useState(false);
+
   const scrollToPartners = () => {
     const el = document.getElementById('partners-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToEnrollment = () => {
+    const el = document.getElementById('enrollment-section');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -29,7 +40,24 @@ export const HomePage = ({ setActiveTab }) => {
             Наши лекторы — признанные специалисты в своих областях, готовые делиться опытом и знаниями.
           </h1>
           
-          <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '12px' }}>
+          <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <button 
+              onClick={scrollToEnrollment}
+              style={{
+                backgroundColor: '#eff6ff',
+                color: '#2563eb',
+                border: '1px solid #bfdbfe',
+                padding: '12px 20px',
+                borderRadius: '8px',
+                fontSize: '15px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s'
+              }}
+            >
+              ⏳ ЗАПИСЬ В ГРУППУ ↓
+            </button>
+
             <button 
               onClick={scrollToPartners}
               style={{
@@ -88,6 +116,17 @@ export const HomePage = ({ setActiveTab }) => {
             <div style={{ color: '#666', fontSize: '14px', marginTop: '4px' }}>Максимальный стаж</div>
           </div>
         </div>
+      </div>
+
+      {/* Вариант 9: Секция набора в группу (Таймер обратного отсчета + Форма заявки) */}
+      <div id="enrollment-section" className="card grid-2" style={{ backgroundColor: '#ffffff', alignItems: 'stretch' }}>
+        <EnrollmentTimer 
+          initialMinutes={15} 
+          onExpire={() => setIsExpired(true)} 
+        />
+        <ApplicationForm 
+          isExpired={isExpired} 
+        />
       </div>
 
       {/* Блок Партнеры (якорь) */}
